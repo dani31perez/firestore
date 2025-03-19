@@ -76,7 +76,7 @@ function ListRecipes() {
   };
 
   return (
-    <ListGroup>
+    <ListGroup className="mb-5">
       {recipes.map((recipe) => (
         <ListGroup.Item key={recipe.Id} className="border-0 mt-3">
           <Container
@@ -123,6 +123,7 @@ function ListRecipes() {
                 <Col md={8} xs={6}>
                   <h4>{recipe.Title}</h4>
                   <p className="fs-5">{recipe.Description}</p>
+                  {recipe.File !== "" && <img src={recipe.File} alt={recipe.Title}/>}
                 </Col>
                 <Col md="auto" xs="auto">
                   <FontAwesomeIcon
