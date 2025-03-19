@@ -54,3 +54,4 @@ npm dev run
 ## 📜 License
 This project is licensed under the MIT License.
 
+You can preview the project using my CodeSandbox link: https://codesandbox.io/p/sandbox/jw3nst 
