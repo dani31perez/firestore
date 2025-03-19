@@ -1,12 +1,56 @@
-# React + Vite
+# Recipe Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application to manage recipes, allowing users to add, edit, list, and delete recipes with images stored in Firebase Storage.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to run the project locally:
 
-## Expanding the ESLint configuration
+### **1. Clone the repository**
+```sh
+git clone https://github.com/dani31perez/firestore.git
+cd firestore
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### **2. Install dependencies**
+```sh
+npm install
+```
+
+### **4. Start the development server**
+```sh
+npm dev run
+```
+
+---
+
+## 📌 Features
+- **Add Recipes:** Users can input a title, description, and an optional image.
+- **List Recipes:** Displays all recipes stored in Firestore.
+- **Edit Recipes:** Users can update title and description.
+- **Delete Recipes:** Users can remove recipes from Firestore.
+- **Image Upload:** Images are uploaded to Firebase Storage and linked in Firestore.
+
+---
+
+## 🛠️ Usage Examples
+
+### **Add a Recipe**
+1. Fill in the title and description fields.
+2. Select an image (optional).
+3. Click `Submit` to save the recipe.
+
+### **Edit a Recipe**
+1. Click the ✏️ (edit) icon next to a recipe.
+2. Modify the title and/or description.
+3. Click 💾 (save) to update the recipe.
+
+### **Delete a Recipe**
+1. Click the 🗑️ (trash) icon next to a recipe.
+2. Confirm deletion.
+
+---
+
+## 📜 License
+This project is licensed under the MIT License.
+
