@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { setDoc, doc, collection, onSnapshot } from "firebase/firestore";
-import { storage, db } from "../firebaseConfig";
+import { doc, collection, onSnapshot, deleteDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -21,9 +21,16 @@ function ListRecipes() {
     return () => unsubscribe();
   }, []);
 
+  const handleDelete = async (recipeId) => {
+    try {
+      await deleteDoc(doc(db, "Recipes", recipeId));
+    } catch (err) {
+      console.error("Error deleting product:", err);
+    }
+  };
+
   return (
     <ListGroup>
-      {console.log(recipes)}
       {recipes.map((recipe) => (
         <ListGroup.Item key={recipe.Id} className="border-0 mt-3">
           <Container>
@@ -34,7 +41,11 @@ function ListRecipes() {
               </Col>
               <Col>
                 <FontAwesomeIcon icon={faPenToSquare} className="me-5 fs-1" />
-                <FontAwesomeIcon icon={faTrash} className="fs-1" />
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  className="fs-1"
+                  onClick={() => handleDelete(recipe.Id)}
+                />
               </Col>
             </Row>
           </Container>
